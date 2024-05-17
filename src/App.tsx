@@ -1,3 +1,5 @@
+import { Router } from './routes/Router'
+
 export function App() {
-  return <div>coffee delivery</div>
+  return <Router />
 }

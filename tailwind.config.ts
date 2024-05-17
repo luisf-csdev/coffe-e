@@ -115,6 +115,9 @@ const config: Config = {
         baloo: ['"Baloo 2"', 'sans-serif'],
         roboto: ['"Roboto"', 'sans-serif'],
       },
+      backgroundImage: {
+        hero: "url('./src/assets/hero-bg.png')",
+      },
     },
   },
   plugins: [],
