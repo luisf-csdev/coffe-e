@@ -5,7 +5,7 @@ export function HeaderCart() {
   const navigate = useNavigate()
 
   function navigateToCart() {
-    navigate('/cart')
+    navigate('/checkout')
   }
 
   return <CartButton onClick={navigateToCart} variant="yellow" count={2} />

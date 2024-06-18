@@ -1,8 +1,9 @@
 import { RouteObject } from 'react-router-dom'
 import { Home } from '../pages/Home'
 import { Layout } from '../components/Layout'
-import { Cart } from '../pages/Cart'
+import { Checkout } from '../pages/Checkout'
 import { NotFound } from '../pages/NotFound'
+import { Success } from '../pages/Success'
 
 export const routes: RouteObject[] = [
   {
@@ -13,8 +14,12 @@ export const routes: RouteObject[] = [
         Component: Home,
       },
       {
-        path: '/cart',
-        Component: Cart,
+        path: '/checkout',
+        Component: Checkout,
+      },
+      {
+        path: '/success',
+        Component: Success,
       },
       {
         path: '*',
