@@ -1,5 +1,10 @@
+import { CartContextProvider } from './context/Cart/CartContext'
 import { Router } from './routes/Router'
 
 export function App() {
-  return <Router />
+  return (
+    <CartContextProvider>
+      <Router />
+    </CartContextProvider>
+  )
 }
