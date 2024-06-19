@@ -9,7 +9,7 @@ export function MaxWidthContainer({
   ...props
 }: MaxWidthContainerProps) {
   return (
-    <div className="mx-auto max-w-[1440px] px-40" {...props}>
+    <div className="mx-auto max-w-[1168px] px-6" {...props}>
       {children}
     </div>
   )

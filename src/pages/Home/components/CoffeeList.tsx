@@ -12,7 +12,7 @@ export function CoffeeList() {
         <h2 className="font-baloo text-titleL text-base-subtitle">
           Nossos cafés
         </h2>
-        <ul className="flex flex-wrap gap-8">
+        <ul className="flex flex-wrap justify-center gap-8 xl:justify-stretch">
           {coffees.map((coffee) => (
             <li key={coffee.title}>
               <CoffeeListCard coffee={coffee} />
