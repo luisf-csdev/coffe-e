@@ -23,6 +23,23 @@ interface CheckoutOrderCardInputProps
   optional?: boolean
 }
 
+// CEP
+
+// const zipCodeMask = (value?: string) => {
+//   if (!value) {
+//     return ''
+//   }
+
+//   value = value.replace(/\D/g, '')
+//   value = value.replace(/(\d{5})(\d)/, '$1-$2')
+//   return value
+// }
+
+// const handleZipCode = (event: Event) => {
+//   const input = event.target!
+//   input.value = zipCodeMask(input.value)
+// }
+
 export function CheckoutOrderCardInput({
   inputSize,
   optional,

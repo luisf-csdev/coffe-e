@@ -16,7 +16,7 @@ interface CartAddress {
   state: string
 }
 
-type CartPaymentMethod = 'credit' | 'debit' | 'money'
+export type CartPaymentMethod = 'credit' | 'debit' | 'money'
 
 export interface CartState {
   products: CartCoffee[]
@@ -32,7 +32,7 @@ function findExistingItemOnCart(
   action: CartAction,
   products: WritableDraft<CartCoffee[]>,
 ) {
-  const item = action.payload!.item
+  const item = action.payload!.item!
   const existingItem = products.find((product) => product.title === item.title)
   return { existingItem, item }
 }
@@ -56,11 +56,23 @@ export function cartReducer(state: CartState, action: CartAction) {
 
     case 'REMOVE_ITEM':
       return produce(state, (draft) => {
-        const item = action.payload!.item
+        const item = action.payload!.item!
 
         draft.products = draft.products.filter((product) => {
           return product.title !== item.title
         })
+      })
+
+    case 'SELECT_PAYMENT_METHOD':
+      return produce(state, (draft) => {
+        const paymentMethod = action.payload!.payment!
+
+        if (draft.paymentMethod === paymentMethod) {
+          draft.paymentMethod = undefined
+          return
+        }
+
+        draft.paymentMethod = paymentMethod
       })
 
     default:

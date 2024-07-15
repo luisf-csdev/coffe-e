@@ -5,20 +5,21 @@ import { CheckoutSection } from './CheckoutSession'
 
 export function CheckoutReview() {
   const { products } = useCartContext()
+
   const productsUnitAmount = products.map(
     (product) => product.unitAmount * product.quantity,
   )
-
   const productsSumUnitAmount = productsUnitAmount.reduce((prev, curr) => {
     return prev + curr
   }, 0)
-
   const productsSum = formatPrice(productsSumUnitAmount)
 
   const deliveryFeeUnitAmount = 350
   const deliveryFee = formatPrice(deliveryFeeUnitAmount)
 
   const totalSum = formatPrice(productsSumUnitAmount + deliveryFeeUnitAmount)
+
+  const isAnyProduct = products.length > 0
 
   return (
     <CheckoutSection
@@ -60,8 +61,9 @@ export function CheckoutReview() {
             </div>
           </div>
           <button
+            disabled={!isAnyProduct}
             type="button"
-            className="rounded-md bg-yellow-500 px-2 py-3 text-buttonL uppercase leading-normal text-white transition-colors hover:bg-yellow-700"
+            className="rounded-md bg-yellow-500 px-2 py-3 text-buttonL uppercase leading-normal text-white transition-colors enabled:hover:bg-yellow-700 disabled:cursor-not-allowed"
           >
             Confirmar pedido
           </button>

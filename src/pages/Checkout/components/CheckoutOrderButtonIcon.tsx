@@ -1,6 +1,7 @@
 import { Bank, CreditCard, Money } from '@phosphor-icons/react'
+import { CartPaymentMethod } from '../../../reducers/cart'
 
-export type CheckoutOrderButtonIconVariant = 'credit' | 'debit' | 'money'
+export type CheckoutOrderButtonIconVariant = CartPaymentMethod
 
 interface CheckoutOrderButtonIconProps {
   variant: CheckoutOrderButtonIconVariant

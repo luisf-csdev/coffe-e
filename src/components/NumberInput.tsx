@@ -2,7 +2,7 @@ import { Minus, Plus } from '@phosphor-icons/react'
 import { ChangeEvent } from 'react'
 
 const className =
-  'size-3.5 text-purple-500 hover:text-purple-700 group-disabled:text-purple-500 transition-colors'
+  'size-3.5 text-purple-500 group-enabled:hover:text-purple-700 transition-colors'
 
 interface NumberInputProps {
   amount: number
